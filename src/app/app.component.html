@@ -3,25 +3,30 @@
 </nav>
 <div class="container">
   <div class="row">
-    <div class="col-sm">
-      <label>Choose future IST Timezone</label>
-<angular2-date-picker (onDateSelect)="onDateSelect($event)" [(ngModel)]="date" [settings]="settings"></angular2-date-picker>
+      <div class="col-sm">
+         <div class="card" style="width: 18rem;">
+           <div class="card-header">Time in Bangalore, India</div>
+            <div class="card-body">
+              <h5 class="card-title"></h5>
+              <p class="card-text"><angular2-date-picker (onDateSelect)="onDateSelect($event)" [(ngModel)]="date" [settings]="settings"></angular2-date-picker></p>
+            </div>
+        </div>
     </div>
     <div class="col-sm">
-       <div class="card" style="width: 18rem;">
-    <div class="card-body">
-      <h5 class="card-title">Time in Germany</h5>
-      <p class="card-text">{{europe}}</p>
-    </div>
-  </div>
+         <div class="card" style="width: 18rem;">
+          <div class="card-header">Time in Berlin, Germany</div>
+            <div class="card-body">
+              <p class="card-text">{{europe}}</p>
+            </div>
+        </div>
     </div>
     <div class="col-sm">
-       <div class="card" style="width: 18rem;">
-    <div class="card-body">
-      <h5 class="card-title">Time in San Francisco</h5>
-      <p class="card-text">{{america}}</p>
-    </div>
-  </div>
+        <div class="card" style="width: 18rem;">
+          <div class="card-header">Time in San Francisco, USA</div>
+          <div class="card-body">
+              <p class="card-text">{{america}}</p>
+          </div>
+        </div>
     </div>
   </div>
 </div>

@@ -6,26 +6,34 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit{
-  title = 'future-time-zone';
+  europe: string;
+  america: string;
   date: Date = new Date();
-  america = '';
-  europe = '';
-  
   settings = {
       bigBanner: true,
       timePicker: true,
-      format: 'dd-MM-yyyy hh:mm a',
+      format: 'EEE, MMM dd, yyyy, hh:mm a',
       defaultOpen: false
   }
-  constructor(){}
-  ngOnInit(){
-
+  constructor(){
+      let options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour:'numeric', minute: 'numeric'};
+      //on page load, display current time
+      this.europe = new Date().toLocaleString("en-US", this.merge(options, {timeZone: "Europe/Berlin"}));
+      this.america = new Date().toLocaleString("en-US", this.merge(options, {timeZone: "America/New_York"}));
   }
-
+  merge(ob1, ob2){
+    let target = Object.assign(ob1, ob2);
+    return target;
+  }
+  ngOnInit(){
+    
+  }
   onDateSelect(){
+      let options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour:'numeric', minute: 'numeric'};
+      //on date select, display corresponding time depending on zone
   	  var localdate = this.date;
-      this.europe = new Date(localdate).toLocaleString("en-US", {timeZone: "Europe/Berlin"});
-      this.america = new Date(localdate).toLocaleString("en-US", {timeZone: "America/New_York"});
+      this.europe = new Date(localdate).toLocaleString("en-US", this.merge(options, {timeZone: "Europe/Berlin"}));
+      this.america = new Date(localdate).toLocaleString("en-US", this.merge(options, {timeZone: "America/New_York"}));
       var world_timezones = [
           'Europe/Andorra',
           'Asia/Dubai',
