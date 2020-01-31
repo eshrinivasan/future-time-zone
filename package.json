@@ -10,7 +10,10 @@
     "e2e": "ng e2e",
     "postinstall": "ng build --aot -prod"
   },
-  "engines": { "node": "10.17.0", "npm": "6.13.7" },
+  "engines": {
+    "node": "10.17.0",
+    "npm": "6.13.7"
+  },
   "private": true,
   "dependencies": {
     "@angular/animations": "~8.2.14",
@@ -31,11 +34,11 @@
     "zone.js": "~0.9.1"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "~0.803.23",
+    "@angular-devkit/build-angular": "^0.803.24",
     "@angular/language-service": "~8.2.14",
-    "@types/node": "~8.9.4",
     "@types/jasmine": "~3.3.8",
     "@types/jasminewd2": "~2.0.3",
+    "@types/node": "~8.9.4",
     "codelyzer": "^5.0.0",
     "jasmine-core": "~3.4.0",
     "jasmine-spec-reporter": "~4.2.1",
