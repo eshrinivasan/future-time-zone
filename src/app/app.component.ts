@@ -9,6 +9,7 @@ export class AppComponent implements OnInit{
   europe: string;
   america: string;
   date: Date = new Date();
+  options: any;
   settings = {
       bigBanner: true,
       timePicker: true,
@@ -16,10 +17,10 @@ export class AppComponent implements OnInit{
       defaultOpen: false
   }
   constructor(){
-      let options = { weekday: 'short', year: 'numeric', month: 'long', day: 'numeric', hour:'numeric', minute: 'numeric'};
-      //on page load, display current time
-      this.europe = new Date().toLocaleString("en-US", this._merge(options, {timeZone: "Europe/Berlin"}));
-      this.america = new Date().toLocaleString("en-US", this._merge(options, {timeZone: "America/New_York"}));
+     this.options = { weekday: 'short', year: 'numeric', month: 'short', day: 'numeric', hour:'numeric', minute: 'numeric'};
+     //on page load, display current time
+     this.europe = new Date().toLocaleString("en-US", this._merge(this.options, {timeZone: "Europe/Berlin"}));
+     this.america = new Date().toLocaleString("en-US", this._merge(this.options, {timeZone: "America/New_York"}));
   }
   _merge(ob1, ob2){
     let target = Object.assign(ob1, ob2);
@@ -29,10 +30,9 @@ export class AppComponent implements OnInit{
     
   }
   onDateSelect(){
-      let options = { weekday: 'short', year: 'numeric', month: 'long', day: 'numeric', hour:'numeric', minute: 'numeric'};
       //on date select, display corresponding time depending on zone
-  	  var localdate = this.date;
-      this.europe = new Date(localdate).toLocaleString("en-US", this._merge(options, {timeZone: "Europe/Berlin"}));
-      this.america = new Date(localdate).toLocaleString("en-US", this._merge(options, {timeZone: "America/New_York"}));
+  	var localdate = this.date;
+     this.europe = new Date(localdate).toLocaleString("en-US", this._merge(this.options, {timeZone: "Europe/Berlin"}));
+     this.america = new Date(localdate).toLocaleString("en-US", this._merge(this.options, {timeZone: "America/New_York"}));
   }
 }

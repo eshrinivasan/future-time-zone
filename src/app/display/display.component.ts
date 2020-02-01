@@ -15,7 +15,7 @@ export class DisplayComponent implements OnInit {
   world_timezones: any;
 
   constructor() {
-  	this.options = { weekday: 'short', year: 'numeric', month: 'long', day: 'numeric', hour:'numeric', minute: 'numeric'};
+  	this.options = { weekday: 'short', year: 'numeric', month: 'short', day: 'numeric', hour:'numeric', minute: 'numeric'};
 	this.world_timezones = [
       'Australia/Sydney',
       'Asia/Shanghai',
@@ -41,7 +41,7 @@ export class DisplayComponent implements OnInit {
       'America/Mexico_City'
     ];
   }
-  // Choose city using select dropdown
+  // choose city using select dropdown and update the time for that zone
   changeCity(e) {
     this.cityName.setValue(e.target.value, {
       onlySelf: true
@@ -57,8 +57,8 @@ export class DisplayComponent implements OnInit {
   ngOnInit(){
 
   }
+  //Look for change in time in the first zone, reflect changes in this zone as well
   ngOnChanges(changes: SimpleChanges) {
-	//on date select, display corresponding time depending on zone
   	this.zone = new Date(changes['date'].currentValue).toLocaleString("en-US", this._merge(this.options, {timeZone: this.selectedCity}));
   }
 }
