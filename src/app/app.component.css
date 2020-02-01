@@ -8,3 +8,7 @@
 	padding: 10px;
 	display: inline-block;
 }
+
+.container-fluid{
+	margin: 10px 0;
+}

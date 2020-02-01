@@ -3,14 +3,19 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { AngularDateTimePickerModule } from 'angular2-datetimepicker';
+import { DisplayComponent } from './display/display.component';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';//must to use formcontrol
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    DisplayComponent
   ],
   imports: [
     BrowserModule,
-    AngularDateTimePickerModule
+    AngularDateTimePickerModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
