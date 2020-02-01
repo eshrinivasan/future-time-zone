@@ -123,8 +123,13 @@
               "devServerTarget": "future-time-zone:serve:production"
             }
           }
+        },
+        "deploy": {
+          "builder": "angular-cli-ghpages:deploy",
+          "options": {}
         }
       }
-    }},
+    }
+  },
   "defaultProject": "future-time-zone"
 }
