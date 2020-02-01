@@ -18,28 +18,27 @@ export class DisplayComponent implements OnInit {
   	this.options = { weekday: 'short', year: 'numeric', month: 'long', day: 'numeric', hour:'numeric', minute: 'numeric'};
 	this.world_timezones = [
       'Australia/Sydney',
-      'Europe/Brussels',
-      'America/St_Johns',
-      'America/Toronto',
-      'America/Vancouver',
       'Asia/Shanghai',
+      'Asia/Kuala_Lumpur',
+      'Asia/Singapore',
+      'Asia/Seoul',
+      'Asia/Hong_Kong',
+      'Asia/Tehran',
+      'Asia/Ho_Chi_Minh',
+      'Europe/Brussels',
       'Europe/Prague',
-      'Europe/Berlin',
       'Europe/Paris',
       'Europe/London',
       'Europe/Athens',
-      'Asia/Hong_Kong',
       'Europe/Budapest',
       'Europe/Dublin',
-      'Asia/Tehran',
       'Europe/Rome',
-      'America/Mexico_City',
-      'Asia/Kuala_Lumpur',
       'Europe/Amsterdam',
-      'Asia/Singapore',
+      'America/Toronto',
+      'America/Vancouver',
       'America/New_York',
-      'America/Los_Angeles',
-      'Asia/Ho_Chi_Minh'
+      'America/Los_Angeles',  
+      'America/Mexico_City'
     ];
   }
   // Choose city using select dropdown
