@@ -3,33 +3,33 @@
 </nav>
 <div class="container-fluid">
   <div class="row">
+    <div class="col-sm">
+       <app-display (messageEvent)="receiveMessage($event)"></app-display>
+    </div>
       <div class="col-sm">
-         <div class="card bg-secondary text-white" style="width: 18rem;">
-           <div class="card-header">Time in Bangalore, India</div>
-            <div class="card-body">
-              <h5 class="card-title"></h5>
-              <p class="card-text"><angular2-date-picker (onDateSelect)="onDateSelect()" [(ngModel)]="date" [settings]="settings"></angular2-date-picker></p>
+         <div class="card " style="width: 18rem;">
+           <div class="card-header bg-success text-white">Time in India (IST)</div>
+            <div class="card-body bg-light">
+              <p class="card-text">{{india}}</p>
             </div>
         </div>
     </div>
     <div class="col-sm">
-     <div class="card bg-info text-white" style="width: 18rem;">
-      <div class="card-header">Time in Berlin, Germany</div>
-        <div class="card-body">
+     <div class="card " style="width: 18rem;">
+      <div class="card-header bg-danger text-white">Time in Berlin, Germany (CET)</div>
+        <div class="card-body bg-light">
           <p class="card-text">{{europe}}</p>
         </div>
     </div>
     </div>
      <div class="col-sm">
-        <div class="card bg-secondary text-white" style="width: 18rem;">
-          <div class="card-header">Time in San Francisco, USA</div>
-          <div class="card-body">
+        <div class="card" style="width: 18rem;">
+          <div class="card-header bg-danger text-white">Time in Los Angeles, USA (PST)</div>
+          <div class="card-body bg-light">
               <p class="card-text">{{america}}</p>
           </div>
         </div>
     </div>
-     <div class="col-sm">
-       <app-display [date]="date"></app-display>
-    </div>
+     
   </div>
 </div>
