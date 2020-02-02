@@ -16,7 +16,7 @@ export class AppComponent implements OnInit{
      //on page load, display current time
      this.india = new Date().toLocaleString("en-US", this._merge(this.options, {timeZone: "Asia/Kolkata"}));
      this.europe = new Date().toLocaleString("en-US", this._merge(this.options, {timeZone: "Europe/Berlin"}));
-     this.america = new Date().toLocaleString("en-US", this._merge(this.options, {timeZone: "America/New_York"}));
+     this.america = new Date().toLocaleString("en-US", this._merge(this.options, {timeZone: "America/Los_Angeles"}));
   }
   _merge(ob1, ob2){
      let target = Object.assign(ob1, ob2);
@@ -28,7 +28,7 @@ export class AppComponent implements OnInit{
   receiveMessage($event){
      this.india = this.changeTimezone($event, 'Asia/Kolkata');
      this.europe = this.changeTimezone($event, 'Europe/Berlin');
-     this.america = this.changeTimezone($event, 'America/New_York');
+     this.america = this.changeTimezone($event, 'America/Los_Angeles');
   }
 
   changeTimezone(evt, ianatz) {
