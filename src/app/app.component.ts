@@ -42,6 +42,18 @@ export class AppComponent implements OnInit{
 
        var diff = new Date(selCitydate).getTime() - new Date(invdate).getTime();
        var calculatedDate = new Date(new Date(evt.zoneDate).getTime() - diff);
-       return calculatedDate.toLocaleString("en-US",this._merge(this.options, {timeZone: ianatz}))
+       var date = calculatedDate.toString().split(" ", 4).join(", ");
+       var time = calculatedDate.toString().split(" ", 5).pop();
+       return date + " "+ this.convertStringToTime(time);
+       
+  }
+  convertStringToTime(time){
+    let [hours,minutes,seconds] = time.split(':');
+    if (hours > 12)
+      hours = hours - 12 + ":" + minutes + " PM"
+    else
+      hours = hours  + ":" + minutes + " AM"
+    
+    return hours;
   }
 }
