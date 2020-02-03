@@ -3,7 +3,7 @@
     Time in 
       <div class="btn-group">
         <select class="custom-select" (change)="changeCity($event)" [formControl]="cityName">
-         <option value="" disabled>city</option>
+         <option value="" disabled>City</option>
          <option *ngFor="let city of world_timezones" [ngValue]="city">{{city}}</option>
         </select>
       </div>
