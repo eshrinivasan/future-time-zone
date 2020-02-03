@@ -3,7 +3,7 @@
 
 ### Idea:
 
-This idea came about while setting up a meeting common to 3 locations in differnt timezones. There needed to have an ability to choose a time of a specific location and see the corresponding time in the other 2 locations to see if its a mutually convenient time to set up a meeting.
+This idea came about while setting up a meeting common to 3 locations in different timezones. There needed to have an ability to choose a time of a specific location and see the corresponding time in the other 2 locations to see if its a mutually convenient time to set up a meeting.
 
 ### Technology decisions:
 
