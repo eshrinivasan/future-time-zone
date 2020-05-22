@@ -15,8 +15,31 @@
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
-<link rel="stylesheet" href="styles.a77c33d81c1c6e6c2e69.css"></head>
+<link rel="stylesheet" href="styles.f6adbfe62be10584aea6.css"></head>
 <body>
   <app-root></app-root>
-<script src="runtime-es2015.c5fa8325f89fc516600b.js" type="module"></script><script src="runtime-es5.c5fa8325f89fc516600b.js" nomodule defer></script><script src="polyfills-es5.d5e41319ac4c4f307356.js" nomodule defer></script><script src="polyfills-es2015.5b10b8fd823b6392f1fd.js" type="module"></script><script src="scripts.d915779c3c0a9004c121.js" defer></script><script src="main-es2015.c29087dc69c967b3a900.js" type="module"></script><script src="main-es5.c29087dc69c967b3a900.js" nomodule defer></script></body>
+  <div id="paypal-button-wrapper">
+  <div id="paypal-button-container"></div>
+  </div>
+<script src="runtime-es2015.c5fa8325f89fc516600b.js" type="module"></script><script src="runtime-es5.c5fa8325f89fc516600b.js" nomodule defer></script><script src="polyfills-es5.8856b1c0dfe3ebd79cff.js" nomodule defer></script><script src="polyfills-es2015.5b10b8fd823b6392f1fd.js" type="module"></script><script src="scripts.d915779c3c0a9004c121.js" defer></script><script src="main-es2015.c29087dc69c967b3a900.js" type="module"></script><script src="main-es5.c29087dc69c967b3a900.js" nomodule defer></script></body>
+<script src="https://www.paypal.com/sdk/js?client-id=AS_fMM_BAFvQThNb0hEjVdYHcpp8AvbGa8LzVcE1SfaFHzD-yZCXxSDI7aes95tkDf4jShAmCNWPJgjb"></script>
+<script>paypal.Buttons({
+    createOrder: function(data, actions) {
+      // This function sets up the details of the transaction, including the amount and line item details.
+      return actions.order.create({
+        purchase_units: [{
+          amount: {
+            value: '0.01'
+          }
+        }]
+      });
+    },
+    onApprove: function(data, actions) {
+      // This function captures the funds from the transaction.
+      return actions.order.capture().then(function(details) {
+        // This function shows a transaction success message to your buyer.
+        alert('Transaction completed by ' + details.payer.name.given_name);
+      });
+    }
+  }).render('#paypal-button-container');</script>
 </html>
